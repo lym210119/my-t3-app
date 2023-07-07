@@ -1,4 +1,4 @@
-import { Button } from "@chakra-ui/react";
+
 import { signIn, signOut, useSession } from "next-auth/react";
 import Head from "next/head";
 import Link from "next/link";
@@ -69,13 +69,12 @@ function AuthShowcase() {
         {sessionData && <span>Logged in as {sessionData.user?.name}</span>}
         {secretMessage && <span> - {secretMessage}</span>}
       </p>
-      <Button colorScheme="blue" onClick={sessionData ? () => void signOut() : () => void signIn()}>{sessionData ? "Sign out" : "Sign in"}</Button>
-      {/* <button
+      <button
         className="rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
         onClick={sessionData ? () => void signOut() : () => void signIn()}
       >
         {sessionData ? "Sign out" : "Sign in"}
-      </button> */}
+      </button>
     </div>
   );
 }
